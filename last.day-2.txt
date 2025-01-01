@@ -1,0 +1,264 @@
+
+********************GradStudentPositions********************
+
+MasseyU_NewZealand.IceMicrobiomics
+
+Fully-funded PhD scholarship to study the extended genome of
+freeze-tolerant alpine insects in New Zealand
+
+Many different alpine insects in Aotearoa/New Zealand have converged
+on the same unusual evolutionary strategy for surviving the cold; they
+freeze solid and survive. Eating the right microbes can change how and
+when insects freeze, potentially providing benefits that are shared by
+unrelated host species. Alternatively this insects may have independently
+converged on similar species-specific solution for ice nucleation.
+
+Review paper here: https://www.mdpi.com/2075-4450/14/1/89
+
+You should have a background in molecular evolution and some programming
+experience would be an advantage. You will focus on bioinformatics to
+investigate the type and sources of ice nucleating agents that enable
+survival of freezing. You will generate DNA and RNA from sympatric insect
+taxa to compare ice+ activity of hosts and their microbiomes.
+
+The scholarship: A tax-free living allowance stipend of NZ$35,000 per
+annum for 3 years, plus tuition fees paid for 3 years. Advert here:
+https://www.massey.ac.nz/study/scholarships-and-awards/phd-scholarship-freeze-tolerant-insects-and-the-microbiome/
+
+Start date: March 2025 or soon after.
+
+Location: The successful applicant will be based on the Manawat� campus
+of Massey University, Palmerston North, NEW ZEALAND. Massey University
+is a smoke-free work environment.
+
+Lead researchers are Mary Morgan-Richards and Steve Trewick of the Te
+Taha Tawhiti research group: https://evolves.massey.ac.nz is within the
+Wildlife & Ecology Group.
+
+Admission criteria & candidate requirements: You'll need a good first
+degree from an internationally recognised university; minimum upper
+second class Hons or a Master's degree in an appropriate subject.
+You should have a background in Ecology/Biology/Evolution/Entomology,
+good statistics skills (preferably experience with R) and an interest
+in evolution and microbiomes.
+
+How to Apply:
+In the first instance we encourage you to contact us by email to discuss
+your interest: m.morgan-richards@massey.ac.nz
+
+M.Morgan-Richards@massey.ac.nz
+
+Steve Trewick <S.Trewick@massey.ac.nz>
+
+(to subscribe/unsubscribe the EvolDir send mail to
+golding@mcmaster.ca<mailto:golding@mcmaster.ca>)
+
+
+
+
+********************GradStudentPositions********************
+
+Dear everyone -
+
+Interested in a Graduate Assistantship?
+
+The Energetics Lab <https://www.energetics-lab.com/> (Giroud) is now
+accepting applications for a motivated individual interested in obtaining
+a Master in Biology at Northern Michigan University starting in the
+Fall of 2025. The project aims at studying the effects of microclimates
+on hibernation and life-history traits in the Thirteen-Lined Ground
+Squirrel. More information about the Laboratory and about the position
+can be found at: https://www.energetics-lab.com/in-the-news
+
+Applications received until January 13th, 2025 will received full
+consideration!
+
+Looking forward to your motivated applications!
+
+Sylvain GIROUD, PhD Habil
+Assistant Professor of Animal Physiology
+
+Northern Michigan University
+Department of Biology | Weston 2107
+
++1 (906) 227-2145
+sgiroud@nmu.edu
+
+https://nmu.edu/biology/sylvain-giroud
+https://www.energetics-lab.com
+
+International Hibernation Society Board Member
+https://hibsoc.com
+
+Sylvain Giroud <sgiroud@nmu.edu>
+
+(to subscribe/unsubscribe the EvolDir send mail to
+golding@mcmaster.ca)
+
+
+
+
+********************PostDocs********************
+
+POSTDOCTORAL POSITION in coevolution - the University of Helsinki
+
+The Insect Symbiosis Ecology and Evolution (ISEE) Research Group at the
+Organismal and Evolutionary Research Program, the University of Helsinki,
+Finland invites applications for a
+
+POSTDOCTORAL RESEARCHER
+
+in Microbiota Manipulation for Pathogen Control in Pollinators
+
+Symbiotic bacterial communities can play an important role for
+the health and evolution of the hosts that they associated with. Many
+insects harbor beneficial gut microbiotas involved in resistance against
+disease. Furthermore, both biotic and abiotic factors can influence the
+bond between hosts and their associated microbes, and create an imbalance
+that may be linked to a decrease in the fitness of the host organism,
+and their population dynamics. This comprehensive project focuses
+on how resilient bacterial communities associated with bumblebees
+are to pathogen infections. The selected candidate (postdoc level)
+will test the effect of pathogens on the species composition of the
+microbiota of bumblebees in the laboratory, and test for the beneficial
+effects of diverse bacterial species in maintaining microbiota and host
+health. Tasks will include insect rearing in laboratory conditions,
+molecular work, microbiota analyses,and writing of manuscripts.The
+specific details of the project will be adjusted to fit the research
+interests of both the PI and the postdoc.
+
+https://jobs.helsinki.fi/job/Helsinki-Postdoctoral-Researcher-in-Microbiota-Manipulation-for-Pathogen-Control-in-Pollinators/808615502/
+For this position,experience with conducting experimental
+assays with animals and in completing analyses of meta-barcoding or
+metagenomic data is required. Additional skills in analyses of RNAseq data
+and behavioral data, and in conducting outreach are meriting but not
+strictly mandatory. Candidates with degrees in Evolutionary Biology,
+Molecular Biology, Microbiology or similar, with experience in the
+above-mentioned research area are strongly encouraged to apply.
+
+The position is available in the ISEE research group of Dr. Anne
+DUPLOUY, starting as soon as possible, but no later than June 2024. The
+ISEE research group is part of the Organismal and Evolutionary Biology
+research program (OEB) within the Faculty of Biological and Environmental
+Sciences in the Viikki Science park. The faculty hosts over 40 leading
+research groups in Plant and Animal Ecology, Evolutionary Genetics,
+among others. This community interacts on a regular basis through
+seminars. The University of Helsinki provides office space, computers,
+bench in a State-of-the-art molecular laboratory, as well as data
+storage space with regular automatic backups. The campus offers various
+key facilities, including green houses and climate chambers for insect
+and plant rearing, laboratories furnished with state-of-the-art molecular
+equipment, genome sequencing and microscopy facilities. Computational
+resources from CSC are available. The project is in collaboration with
+Prof Johan EKROOS from the Faculty of Agriculture and Forestry at the
+University of Helsinki. International collaborations with colleagues
+from Montpellier, Graz and Warwick Universities are possible within the
+scope of the project.
+
+For more information on the hosting research
+group: www.anneduplouy.net; and the PI:
+https://www.helsinki.fi/en/researchgroups/insect-symbiosis-ecology-and-evolution
+
+The salary is defined in accordance with the University salary system
+for teaching and research personnel (and depending on the appointee s
+qualifications and experience). The position is for a fixed-term of 2
+years. A trial period of six months will be applied.  The position will be
+filled as soon as possible, or as agreed with the selected candidate, but
+no later than June 2025. The University of Helsinki offers comprehensive
+services to its employees, including occupational healthcare, access
+to high quality sports facilities, and opportunities for professional
+development (pedagogy, language, etc). There are also several funding
+opportunities that the candidate may consider to acquire their own
+funding with support from the PI.
+
+The application should include the following attachments as a single pdf-
+file(in English):
+1) Statement on your background, your motivations to join the
+   research group, and ambitions (eg. How do you fit?, what would you
+   bring?, what do you seek?)(max. 1 page)
+2) Curriculum Vitae
+3) List of publications (preprints can be mentioned, if a doi is
+   also provided)
+4) Names and contact details of two references
+
+https://jobs.helsinki.fi/job/Helsinki-Postdoctoral-Researcher-in-Microbiota-Manipulation-for-Pathogen-Control-in-Pollinators/808615502/
+
+To apply, please submit the application through the University of Helsinki
+electronic recruitment system by clicking on the Apply button for the
+position. Internal applicants (i.e., current employees of the University
+of Helsinki) please submit your applications through the SAP HR portal.
+
+The closing date is January 15th, 2025. Review of applications will begin
+immediately and continue until the position is filled.
+
+For more information: Dr. Anne Duplouy, anne.duplouy(at)helsinki.fi
+
+The University of Helsinki and the ISEE research group are strongly
+committed to diversity and equity, and welcome all relevant applications
+regardless of religious, geographic or any other backgrounds.
+
+"Duplouy, Anne M R" <anne.duplouy@helsinki.fi>
+
+(to subscribe/unsubscribe the EvolDir send mail to
+golding@mcmaster.ca)
+
+
+
+
+********************Conferences********************
+
+An SMBE satellite meeting entitled "The Origin, Maintenance and Evolution
+of Biological Noise" will take place in T�bingen, Germany, June 3 - 5, 2025.
+
+Details can be found here:
+https://pallareslab.github.io/bionoise2025/index.html
+
+Noise is a fundamental, yet long understudied, aspect of biology. The goal
+of this symposium is to bring together researchers working on noise from
+different fields (e.g., theoreticians, molecular biologists, population
+geneticists, system biologists, philosophers) in order to establish the
+common principles guiding the origin, maintenance, and evolution of
+biological noise at distinct organization levels, from molecules, to
+transcriptional networks, to higher-order phenotypes, to populations.
+
+After a plenary talk by the philosopher of science Francesca Merlin, we
+plan four sessions, each with an invited keynote talk, contributed talks,
+posters and discussion. There will be no concurrent events at this meeting.
+
+1. Non-genetic inheritance of phenotypic noise (keynote: Maria
+   Carmo-Fonseca)
+2. The genetic basis of phenotypic noise (keynote: TBD)
+3. The organismal implications of phenotypic noise (keynote:
+   Patricia Wittkopp)
+4. The population genetics of phenotypic noise (keynote: Daniel
+   Weinreich)
+
+Abstracts are due February 28, 2025, and acceptance decisions will be made
+March 15, 2025. Please note that the meeting is capped at 40, meaning that
+it may not be possible to accept all applications. Acceptance decisions
+will seek to maximize intellectual diversity as well as the diversity of
+participants. Special attention will be paid to individuals from
+historically underrepresented groups, as well as to early career
+investigators. Stipends may be available in cases of need.
+
+Details can be found here:
+https://pallareslab.github.io/bionoise2025/index.html
+
+Please feel free to forward this message to interested individuals in your
+research group and wider community.
+
+Ignacio Bravo (CNRS, Montpellier)
+Julien Dutheil (MPI, Pl�n)
+Luisa Pallares (MPI, T�bingen)
+Daniel Weinreich (Brown University)
+
+google.com/view/weinreichlab/home
+<https://sites.google.com/view/weinreichlab/home>
+
+daniel_weinreich@brown.edu
+
+(to subscribe/unsubscribe the EvolDir send mail to
+golding@mcmaster.ca<mailto:golding@mcmaster.ca>)
+
+
+

@@ -156,68 +156,74 @@ function process_post($post, $session)
 
 //----------------------------------------------------------------------------------------
 
-// harvest
 
-$url = 'https://evol.mcmaster.ca/~brian/evoldir/last.day';
-//$url = 'https://evol.mcmaster.ca/~brian/evoldir/last.day-1';
-//$url = 'https://evol.mcmaster.ca/~brian/evoldir/last.day-2';
-
-$text = get($url);
-
-if ($text == '')
-{
-	echo "Failed to get posts from EvolDir\n";
-	exit();
-}
 
 $session = create_session();
 
-$filename = 'last.day.txt';
+// harvest
+$urls = array(
+'https://evol.mcmaster.ca/~brian/evoldir/last.day',
+'https://evol.mcmaster.ca/~brian/evoldir/last.day-1',
+'https://evol.mcmaster.ca/~brian/evoldir/last.day-2',
+);
 
-file_put_contents($filename, $text);
-
-$text = file_get_contents($filename);
-
-$lines = explode("\n", $text);
-
-$post = null;
-
-foreach ($lines as $line)
+foreach ($urls as $url)
 {
-	if (preg_match('/^[\*]{5,}(?<heading>[^\*]+)[\*]+/', $line, $m))
+	$filename = str_replace('https://evol.mcmaster.ca/~brian/evoldir/', '', $url);
+	$filename .= '.txt';
+
+	$text = get($url);
+	
+	if ($text == '')
 	{
-		// print_r($m);
-		
-		if ($post)
-		{
-			process_post($post, $session);
-		}
-		
-		$post = new stdclass;
-		$post->heading = $m['heading'];
-		$post->body = array();
-		$post->links = array();
+		echo "Failed to get posts from EvolDir\n";
+		exit();
 	}
-	else
+	
+	file_put_contents($filename, $text);
+	
+	$text = file_get_contents($filename);
+	
+	$lines = explode("\n", $text);
+	
+	$post = null;
+	
+	foreach ($lines as $line)
 	{
-		if ($post)
+		if (preg_match('/^[\*]{5,}(?<heading>[^\*]+)[\*]+/', $line, $m))
 		{
-			$post->body[] = $line;
+			// print_r($m);
 			
-			if (preg_match('/(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))/', $line, $m))
+			if ($post)
 			{
-				$url = $m[1];
-				$url = preg_replace('/\)\.?$/', '', $url);
-				$post->links[] = $url;
+				process_post($post, $session);
+			}
+			
+			$post = new stdclass;
+			$post->heading = $m['heading'];
+			$post->body = array();
+			$post->links = array();
+		}
+		else
+		{
+			if ($post)
+			{
+				$post->body[] = $line;
+				
+				if (preg_match('/(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))/', $line, $m))
+				{
+					$url = $m[1];
+					$url = preg_replace('/\)\.?$/', '', $url);
+					$post->links[] = $url;
+				}
 			}
 		}
+	}	
+	
+	if ($post)
+	{
+		process_post($post, $session);
 	}
-}	
-
-if ($post)
-{
-	process_post($post, $session);
 }
-
 
 ?>
