@@ -1,0 +1,6 @@
+.DS_Store
+env.php
+
+/posts/
+!/posts/README.md
+
