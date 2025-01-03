@@ -31,7 +31,9 @@ function get($url, $format = '')
 	{
 		$errorText = curl_error($ch);
 		curl_close($ch);
-		die($errorText);
+		//die($errorText);
+		echo $errorText;
+		return '';
 	}
 	
 	$info = curl_getinfo($ch);
