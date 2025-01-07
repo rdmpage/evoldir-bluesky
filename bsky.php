@@ -103,6 +103,14 @@ function image_to_blob($session, $url)
 		);
 		
 		$blob = json_decode($json);
+				
+		// Bluseky has a size limit, e.g.
+		// {"error":"BlobTooLarge","message":"This file is too large. It is 1.83MB but the maximum size is 976.56KB."}
+		if (isset($blob->blob->size) && $blob->blob->size > 900000)
+		{
+			echo "Blob size [" . $blob->blob->size . "] is too large\n";
+			$blob = null;
+		}
 	}
 	
 	return $blob;
