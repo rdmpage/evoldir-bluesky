@@ -153,10 +153,28 @@ function get_card($session, $url)
 				case 'og:image':
 					$img_url = $meta->content;
 					
-					// naive attempt to make relative URL global
-					if (!preg_match('/:\/\//', $img_url))
+					// is URL global?
+					if (!preg_match('/^https?:\/\//', $img_url))
 					{
-						$img_url = $url . $img_url;
+						// no, attempt to make relative URL global					
+						// e.g. <meta property="og:image" content="/event/128/logo-2622241876.png">					
+
+						// get base URL for website
+						$url_parts = parse_url($url);
+						if (isset($url_parts['PHP_URL_SCHEME']) && isset($url_parts['PHP_URL_HOST']))
+						{
+							$base_url = $url_parts['PHP_URL_SCHEME'] . '://' . $url_parts['PHP_URL_HOST'];
+							
+							if (preg_match('/^\//', $img_url))
+							{							
+								$img_url = $base_url . $img_url;
+							}
+							
+							if (preg_match('/^[^\/]/', $img_url))
+							{							
+								$img_url = $base_url . '/' . $img_url;
+							}
+						}
 					}
 					
 					$blob = image_to_blob($session, $img_url);
