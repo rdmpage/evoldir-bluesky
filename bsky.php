@@ -103,6 +103,8 @@ function image_to_blob($session, $url)
 		);
 		
 		$blob = json_decode($json);
+		
+		// print_r($blob);
 				
 		// Bluseky has a size limit, e.g.
 		// {"error":"BlobTooLarge","message":"This file is too large. It is 1.83MB but the maximum size is 976.56KB."}
@@ -155,22 +157,22 @@ function get_card($session, $url)
 					
 					// is URL global?
 					if (!preg_match('/^https?:\/\//', $img_url))
-					{
+					{					
 						// no, attempt to make relative URL global					
 						// e.g. <meta property="og:image" content="/event/128/logo-2622241876.png">					
 
 						// get base URL for website
 						$url_parts = parse_url($url);
-						if (isset($url_parts['PHP_URL_SCHEME']) && isset($url_parts['PHP_URL_HOST']))
+						
+						if (isset($url_parts['scheme']) && isset($url_parts['host']))
 						{
-							$base_url = $url_parts['PHP_URL_SCHEME'] . '://' . $url_parts['PHP_URL_HOST'];
+							$base_url = $url_parts['scheme'] . '://' . $url_parts['host'];
 							
 							if (preg_match('/^\//', $img_url))
 							{							
 								$img_url = $base_url . $img_url;
-							}
-							
-							if (preg_match('/^[^\/]/', $img_url))
+							} 
+							elseif (preg_match('/^[^\/]/', $img_url))
 							{							
 								$img_url = $base_url . '/' . $img_url;
 							}
@@ -201,9 +203,19 @@ function get_card($session, $url)
 	}
 	
 	// check card is OK
-	if (!isset($card->title) || !isset($card->description))
+	
+	if (!isset($card->title))
 	{
+		// card must have a title
 		$card = null;
+	}
+	else
+	{
+		if (!isset($card->description))
+		{
+			// must also have a description
+			$card->description = $card->title;
+		}
 	}
 
 	return $card;			
@@ -410,6 +422,8 @@ if (0)
 	$url = 'https://peerj.com';
 	$url = 'https://zookeys.pensoft.net';
 	
+	$url = 'https://workshops.evolbio.mpg.de/event/128/';
+	$url = 'https://www.prstats.org/course/time-series-analysis-and-forecasting-using-r-and-rstudio-tsaf01/';
 	$card = get_card($session, $url);
 	
 	print_r($card);
