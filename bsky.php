@@ -13,8 +13,14 @@ $debug = true;
 $debug = false;
 
 //----------------------------------------------------------------------------------------
+// return HTTP code and content
 function get($url, $format = '')
 {
+	// We need to be a bit clever as web sites can fail to respond
+	$result = new stdclass;
+	$result->code = 0;
+	$result->content = '';
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -25,6 +31,16 @@ function get($url, $format = '')
 	{
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: " . $format));	
 	}
+	else
+	{
+		// Try and convince the web site that we are a web browser... ;)
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			"Accept: */*",
+			"Accept-Language: en-gb",
+			"User-agent: Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405" 
+			)
+		);
+	}	
 	
 	$response = curl_exec($ch);
 	if($response == FALSE) 
@@ -39,9 +55,14 @@ function get($url, $format = '')
 	$info = curl_getinfo($ch);
 	$http_code = $info['http_code'];
 	
+	$result->code = $http_code;
+	$result->content = $response;
+	
+	print_r($result);
+	
 	curl_close($ch);
 	
-	return $response;
+	return $result;
 }
 
 //----------------------------------------------------------------------------------------
@@ -89,7 +110,9 @@ function image_to_blob($session, $url)
 {
 	$blob = null;
 	
-	$image = get($url);
+	$response = get($url);
+	
+	$image = $response->content;
 	if ($image != '')
 	{
 		$finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -123,8 +146,12 @@ function get_card($session, $url)
 {
 	$card = new stdclass;
 	$card->uri = $url;
+	
+	$response = get($url);
+	
+	if ($response->code != 200) return null;
 
-	$html = get($url);		
+	$html = $response->content;	
 	
 	if ($html == '')
 	{
@@ -253,15 +280,18 @@ function resolve_handle($handle)
 
 	$url = 'https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=' . urlencode($handle);
 	
-	$json = get($url);
+	$response = get($url);
 	
-	$obj = json_decode($json);
-	
-	if ($obj && isset($obj->did))
+	if ($response->code == 200)
 	{
-		$did = $obj->did;
+		$obj = json_decode($response->content);
+		
+		if ($obj && isset($obj->did))
+		{
+			$did = $obj->did;
+		}
 	}
-	
+		
 	return $did;
 }
 
@@ -424,6 +454,11 @@ if (0)
 	
 	$url = 'https://workshops.evolbio.mpg.de/event/128/';
 	$url = 'https://www.prstats.org/course/time-series-analysis-and-forecasting-using-r-and-rstudio-tsaf01/';
+	
+	//$url = 'https://www.physalia-courses.org/courses-workshops/course58/';
+	
+	$url = 'https://www.uu.se/en/about-uu/join-us/jobs-and-vacancies/job-details?query=787008';
+	
 	$card = get_card($session, $url);
 	
 	print_r($card);
