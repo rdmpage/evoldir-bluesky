@@ -172,11 +172,13 @@ foreach ($urls as $url)
 	$filename = str_replace('https://evol.mcmaster.ca/~brian/evoldir/', '', $url);
 	$filename .= '.txt';
 
-	$text = get($url);
+	$result = get($url);
+	
+	$text = $result->content;
 	
 	if ($text == '')
 	{
-		echo "Failed to get posts from EvolDir\n";
+		echo "Failed to get posts from EvolDir: HTTP " . $result->code . "\n";
 		exit();
 	}
 	

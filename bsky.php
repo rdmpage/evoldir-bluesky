@@ -58,7 +58,7 @@ function get($url, $format = '')
 	$result->code = $http_code;
 	$result->content = $response;
 	
-	print_r($result);
+	//print_r($result);
 	
 	curl_close($ch);
 	
@@ -145,6 +145,7 @@ function image_to_blob($session, $url)
 function get_card($session, $url)
 {
 	$card = new stdclass;
+	
 	$card->uri = $url;
 	
 	$response = get($url);
@@ -173,10 +174,12 @@ function get_card($session, $url)
 			{				
 				case 'og:title':
 					$card->title = $meta->content;
+					$card->title = html_entity_decode($card->title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 					break;
 
 				case 'og:description':
 					$card->description = $meta->content;
+					$card->description = html_entity_decode($card->description, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 					break;
 					
 				case 'og:image':
@@ -338,7 +341,8 @@ function post_message($session, $text, $debug = false)
 		}
 		
 		// links
-		if (preg_match_all('/[$|\W](?<link>https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*[-a-zA-Z0-9@%_\+~#\/=])?)/', $text, $matches, PREG_OFFSET_CAPTURE))
+		// try to catch links where people just type "www" instead of http :(
+		if (preg_match_all('/[$|\W](?<link>(https?:\/\/|www\.)(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*[-a-zA-Z0-9@%_\+~#\/=])?)/', $text, $matches, PREG_OFFSET_CAPTURE))
 		{
 			foreach ($matches['link'] as $match)
 			{
@@ -351,6 +355,17 @@ function post_message($session, $text, $debug = false)
 				$facet->index->byteEnd = $match[1] + strlen($link);
 				
 				$facet->features = array();
+				
+				
+				// Ensure link is a URI (do this after we have extracted byteStart 
+				// and byteEnd otherwise link might no longer have same length as
+				// string in the original post.
+	
+				// Add protocol to link if we have just www without http
+				if (!preg_match('/^https?:\/\//', $link))
+				{
+					$link = 'http://' . $link;
+				}
 				
 				$feature = new stdclass;
 				$feature->{'$type'} = 'app.bsky.richtext.facet#link';
@@ -459,7 +474,13 @@ if (0)
 	
 	$url = 'https://www.uu.se/en/about-uu/join-us/jobs-and-vacancies/job-details?query=787008';
 	
+	$url = 'www.senckenberg.de';
+	$url = 'www.smnk.de';
+	$url = 'www.ben-ami.com';
+	
 	$card = get_card($session, $url);
+	
+	print_r($card);
 	
 	print_r($card);
 	
