@@ -108,10 +108,23 @@ function summarise(&$post)
 }
 
 //----------------------------------------------------------------------------------------
+function is_base64($string)
+{
+	return (bool) preg_match('/^\s*[A-Za-z0-9+=\r\n]+\s*$/u', $string);
+}
+
+//----------------------------------------------------------------------------------------
 function process_post($post, $session)
 {
 	$post->links = array_unique($post->links);			
 	$post->text = join("\n", $post->body);
+	
+	// Handle base64 encoded emails
+	if (is_base64($post->text))
+	{
+		$post->text = base64_decode($post->text);
+	}
+	
 	$post->numchars = strlen($post->text);
 	
 	$post->md5 = md5($post->text);
@@ -175,7 +188,7 @@ foreach ($urls as $url)
 	$result = get($url);
 	
 	$text = $result->content;
-	
+
 	if ($text == '')
 	{
 		echo "Failed to get posts from EvolDir: HTTP " . $result->code . "\n";
