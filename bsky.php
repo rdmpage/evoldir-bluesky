@@ -113,7 +113,7 @@ function image_to_blob($session, $url)
 	$response = get($url);
 	
 	$image = $response->content;
-	if ($image != '')
+	if ($response->code != 404 && $image != '')
 	{
 		$finfo = new finfo(FILEINFO_MIME_TYPE);
 		$mime_type = $finfo->buffer($image);
@@ -126,9 +126,7 @@ function image_to_blob($session, $url)
 		);
 		
 		$blob = json_decode($json);
-		
-		// print_r($blob);
-				
+						
 		// Bluseky has a size limit, e.g.
 		// {"error":"BlobTooLarge","message":"This file is too large. It is 1.83MB but the maximum size is 976.56KB."}
 		if (isset($blob->blob->size) && $blob->blob->size > 900000)
@@ -477,6 +475,8 @@ if (0)
 	$url = 'www.senckenberg.de';
 	$url = 'www.smnk.de';
 	$url = 'www.ben-ami.com';
+	
+	$url = 'https://environment.fiu.edu';
 	
 	$card = get_card($session, $url);
 	
