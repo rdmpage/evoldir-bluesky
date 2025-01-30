@@ -173,11 +173,13 @@ function get_card($session, $url)
 				case 'og:title':
 					$card->title = $meta->content;
 					$card->title = html_entity_decode($card->title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+					$card->title = htmlspecialchars_decode($card->title, ENT_QUOTES | ENT_HTML5);
 					break;
 
 				case 'og:description':
 					$card->description = $meta->content;
 					$card->description = html_entity_decode($card->description, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+					$card->description = htmlspecialchars_decode($card->description, ENT_QUOTES | ENT_HTML5);
 					break;
 					
 				case 'og:image':
