@@ -12,7 +12,7 @@ function openai_call($url, $data)
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));  
+	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data, JSON_INVALID_UTF8_SUBSTITUTE));  
 	
 	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
