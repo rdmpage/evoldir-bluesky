@@ -228,6 +228,8 @@ function get_card($session, $url)
 			foreach ($dom->find('title') as $title)
 			{
 				$card->title = $title->plaintext;
+				$card->title = html_entity_decode($card->title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+				$card->title = htmlspecialchars_decode($card->title, ENT_QUOTES | ENT_HTML5);
 			}
 		}
 	}
